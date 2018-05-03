@@ -101,12 +101,12 @@ $("#entry").on("click", ".updateEntry", function (event) {
   $.get("/api/entry/" + id).then(function (data) {
     $("#email-update").val(localStorage.getItem("email"), );
     $("#dest-update").val(data.destination);
-    $("#act-update").val(data.attractions);
-    $("#rest-update").val(data.activities);
-    $("#attr-update").val(data.restaurants);
+    $("#act-update").val(data.activities);
+    $("#rest-update").val(data.restaurants);
+    $("#attr-update").val(data.attractions);
     $("#update-changes").data("id", data.id);
   })
-}); //deleteEntry button ends here
+}); //update Entry button ends here data.restaurants
 
 
 // update changes button function.
@@ -124,11 +124,11 @@ $("#update-changes").on("click", function (event) {
     // email: $("#email-update").val().trim(),
     email: localStorage.getItem("email"),
     destination: $("#dest-update").val().trim(),
-    attractions: $("#act-update").val().trim(),
-    activities: $("#rest-update").val().trim(),
-    restaurants: $("#attr-update").val().trim(),
+    activities: $("#act-update").val().trim(),
+    restaurants: $("#rest-update").val().trim(),
+    attractions: $("#attr-update").val().trim(),
     id: id
-  };//var updatedinfo ends here
+  };//var updatedinfo ends here attractions
 
   $.ajax({
     method: "PUT",
@@ -161,123 +161,123 @@ $("#update-changes").on("click", function (event) {
 
 //NOT USING BELOW FUNCTIONS. They were for need help modal for restaurants and attraction buttons.
 
-$("#help").on("click", function (event) {
-  event.preventDefault()
-  var destination = $("#destInput").val().trim();
-  var zomURL = "https://api.foursquare.com/v2/venues/search?client_id=NELSJRC1FWDIY1SJAC1QIRBMZKREWGTEC3CJFAKDM1OPTNPV&client_secret=Y51IZLSLUJIWDSIBGOAMGK2ON3KIUPSQNHMKAQPCI3M11CHR&v=20180501&near=";
+// $("#help").on("click", function (event) {
+//   event.preventDefault()
+//   var destination = $("#destInput").val().trim();
+//   var zomURL = "https://api.foursquare.com/v2/venues/search?client_id=NELSJRC1FWDIY1SJAC1QIRBMZKREWGTEC3CJFAKDM1OPTNPV&client_secret=Y51IZLSLUJIWDSIBGOAMGK2ON3KIUPSQNHMKAQPCI3M11CHR&v=20180501&near=";
 
-  $.ajax({
-    url: zomURL + destination,
-    method: "GET"
-  }).then(function (results) {
+//   $.ajax({
+//     url: zomURL + destination,
+//     method: "GET"
+//   }).then(function (results) {
 
-    var results = results.response.venues
-    var h1 = $("<h1>");
-    $("#modalTitle").append(h1);
-    h1.text("Restaurants");
-    for (var i = 0; i < 10; i++) {
-      // var div = $("<div>");
-      var div1 = $("<div>")
-      var hr = $("<hr>")
-      var h2 = $("<h2>");
-      var p1 = $("<h4>");
-      var p2 = $("<h4>");
-      var p3 = $("<h4>");
-      var p4 = $("<h4>");
-      var p5 = $("<h4>");
-      var a = $("<a>");
-      var name = results[i].name;
-      var address = results[i].location.address;
-      var crossStreet = results[i].location.crossStreet;
-      var city = results[i].location.city;
-      var state = results[i].location.state;
-      var postal = results[i].location.postalCode;
-      var url = results[i].url;
-      a.attr("href", url);
-      a.appendTo(h2)
-      div1.attr("id", "modText");
-      h2.text(name);
-      p1.text(address);
-      p2.text(crossStreet);
-      p3.text(city);
-      p4.text(state);
-      p5.text(postal);
-      p3.appendTo(p4);
-      p4.appendTo(p5);
-      div1.append(h2, p1, p2, p3);
-      div1.append(hr)
-      h2.addClass("name")
-      // div.append(div1)
-      // console.log("this is one" + results[i].location.formattedAddress[i])
-      // p.text(address)
-      // div.append(p)
-      console.log("destination ", destination)
-      $(".modal-body").append(div1);
-    };
-    $("#myModal").modal("show");
+//     var results = results.response.venues
+//     var h1 = $("<h1>");
+//     $("#modalTitle").append(h1);
+//     h1.text("Restaurants");
+//     for (var i = 0; i < 10; i++) {
+//       // var div = $("<div>");
+//       var div1 = $("<div>")
+//       var hr = $("<hr>")
+//       var h2 = $("<h2>");
+//       var p1 = $("<h4>");
+//       var p2 = $("<h4>");
+//       var p3 = $("<h4>");
+//       var p4 = $("<h4>");
+//       var p5 = $("<h4>");
+//       var a = $("<a>");
+//       var name = results[i].name;
+//       var address = results[i].location.address;
+//       var crossStreet = results[i].location.crossStreet;
+//       var city = results[i].location.city;
+//       var state = results[i].location.state;
+//       var postal = results[i].location.postalCode;
+//       var url = results[i].url;
+//       a.attr("href", url);
+//       a.appendTo(h2)
+//       div1.attr("id", "modText");
+//       h2.text(name);
+//       p1.text(address);
+//       p2.text(crossStreet);
+//       p3.text(city);
+//       p4.text(state);
+//       p5.text(postal);
+//       p3.appendTo(p4);
+//       p4.appendTo(p5);
+//       div1.append(h2, p1, p2, p3);
+//       div1.append(hr)
+//       h2.addClass("name")
+//       // div.append(div1)
+//       // console.log("this is one" + results[i].location.formattedAddress[i])
+//       // p.text(address)
+//       // div.append(p)
+//       console.log("destination ", destination)
+//       $(".modal-body").append(div1);
+//     };
+//     $("#myModal").modal("show");
 
-  }
-  )
-})
-// $(document).on("click", ".dest", function () {
-$("#attrHelp").on("click", function (event) {
+//   }
+//   )
+// })
+// // $(document).on("click", ".dest", function () {
+// $("#attrHelp").on("click", function (event) {
 
-  event.preventDefault();
-  var destination = $("#destInput").val().trim();
-  var tomURL = "https://api.foursquare.com/v2/venues/explore?client_id=NELSJRC1FWDIY1SJAC1QIRBMZKREWGTEC3CJFAKDM1OPTNPV&client_secret=Y51IZLSLUJIWDSIBGOAMGK2ON3KIUPSQNHMKAQPCI3M11CHR&v=20180501&near=";
+//   event.preventDefault();
+//   var destination = $("#destInput").val().trim();
+//   var tomURL = "https://api.foursquare.com/v2/venues/explore?client_id=NELSJRC1FWDIY1SJAC1QIRBMZKREWGTEC3CJFAKDM1OPTNPV&client_secret=Y51IZLSLUJIWDSIBGOAMGK2ON3KIUPSQNHMKAQPCI3M11CHR&v=20180501&near=";
 
-  $.ajax({
-    url: tomURL + destination,
-    method: "GET"
-  }).then(function (results) {
+//   $.ajax({
+//     url: tomURL + destination,
+//     method: "GET"
+//   }).then(function (results) {
 
-    var results = results.response
-    var h1 = $("<h1>");
-    $("#modalTitle").append(h1);
-    h1.text("Attractions");
+//     var results = results.response
+//     var h1 = $("<h1>");
+//     $("#modalTitle").append(h1);
+//     h1.text("Attractions");
 
-    for (var i = 0; i < 10; i++) {
-      // var div = $("<div>");
-      var div1 = $("<div>")
-      var hr = $("<hr>")
-      var h2 = $("<h2>");
-      var p1 = $("<h4>");
-      var p2 = $("<h4>");
-      var p3 = $("<h4>");
-      var p4 = $("<h4>");
-      var p5 = $("<h4>");
+//     for (var i = 0; i < 10; i++) {
+//       // var div = $("<div>");
+//       var div1 = $("<div>")
+//       var hr = $("<hr>")
+//       var h2 = $("<h2>");
+//       var p1 = $("<h4>");
+//       var p2 = $("<h4>");
+//       var p3 = $("<h4>");
+//       var p4 = $("<h4>");
+//       var p5 = $("<h4>");
 
-      var name = results.groups[0].items[i].venue.name;
-      var address = results.groups[0].items[i].venue.location.address;
-      var crossStreet = results.groups[0].items[i].venue.location.crossStreet;
-      var city = results.groups[0].items[i].venue.location.city;
-      var state = results.groups[0].items[i].venue.location.state;
-      var postal = results.groups[0].items[i].venue.location.postalCode;
-      // var url = results.groups[0].items[i].
+//       var name = results.groups[0].items[i].venue.name;
+//       var address = results.groups[0].items[i].venue.location.address;
+//       var crossStreet = results.groups[0].items[i].venue.location.crossStreet;
+//       var city = results.groups[0].items[i].venue.location.city;
+//       var state = results.groups[0].items[i].venue.location.state;
+//       var postal = results.groups[0].items[i].venue.location.postalCode;
+//       // var url = results.groups[0].items[i].
 
 
-      div1.attr("id", "modText");
-      h2.text(name);
-      p1.text(address);
-      p2.text(crossStreet);
-      p3.text(city);
-      p4.text(state);
-      p5.text(postal);
-      p3.appendTo(p4);
-      p4.appendTo(p5);
-      div1.append(h2, p1, p2, p3);
-      div1.append(hr)
-      h2.addClass("name")
-      // div.append(div1)
-      // console.log("this is one" + results[i].location.formattedAddress[i])
-      // p.text(address)
-      // div.append(p)
-      // console.log(results.groups[].items[i].venue)
-      // console.log("destination ", destination)
-      $(".modal-body").append(div1);
-    };
-    $("#myModal").modal("show");
-  }
-  )
+//       div1.attr("id", "modText");
+//       h2.text(name);
+//       p1.text(address);
+//       p2.text(crossStreet);
+//       p3.text(city);
+//       p4.text(state);
+//       p5.text(postal);
+//       p3.appendTo(p4);
+//       p4.appendTo(p5);
+//       div1.append(h2, p1, p2, p3);
+//       div1.append(hr)
+//       h2.addClass("name")
+//       // div.append(div1)
+//       // console.log("this is one" + results[i].location.formattedAddress[i])
+//       // p.text(address)
+//       // div.append(p)
+//       // console.log(results.groups[].items[i].venue)
+//       // console.log("destination ", destination)
+//       $(".modal-body").append(div1);
+//     };
+//     $("#myModal").modal("show");
+//   }
+//   )
 
-})
+// })
