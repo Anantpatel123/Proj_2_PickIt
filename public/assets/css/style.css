@@ -1,0 +1,183 @@
+#thirdpage{
+    width: 60%;
+}
+#firstpage, #secondpage, #thirdpage{
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+   font-size: 17px;
+   margin-top: -30px;
+} 
+#update{
+    color: white;
+}
+.entryclass {
+   font: bold;
+   font-size: 15px;
+   color: white;
+   line-height: 20px;
+} 
+.form-control {
+   color: black;
+   /* background-color: lightslategrey; */
+}
+
+h1.text-center{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 80px;
+}
+h2.text-center{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+h3.text-center{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#infobox{
+    background-color: rgba(0, 0, 0, 0.389);
+}
+
+/* VIDEO BACKGROUND CSS */
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+    overflow: hidden;
+}
+.fullscreen-bg__video {
+    /* Make video to at least 100% wide and tall */
+  min-width: 100%; 
+  min-height: 100%; 
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* VIEW PAGE - COVER VIDEO */
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+    z-index: 0;
+    height: 450px;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+    z-index: 0;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+    z-index: 0;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    z-index: 0;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    z-index: 0;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+    z-index: -1;
+}
+
+.panel panel-default{
+    opacity: 0.6;
+}
+
+.wrapper{
+    text-align: center;
+    z-index: 1;
+}
+
+.card-title{
+    color: black;
+}
+
+.card-body{
+    color: black;
+}
+
+#view-dest-body{
+   background-image: url("../images/maxresdefault.jpg");
+   background-attachment: fixed;
+}
+
+.navbar-brand logo{
+    color: white; 
+}
+#loggedemail{
+    font-family: 'Inconsolata', monospace;
+    margin-top: 70px;
+    /* 'Gugi', cursive; */
+}
+#emailBox{
+  margin: auto
+}
+
+#myModal{
+    /* width: 100%; */
+    height: 100%;
+    color: black
+}
+.modal-backdrop{
+    background-image: url("https://tse4.mm.bing.net/th?id=OIP.dG6znRYCfbcYMztU6C9a0wHaEr&w=300&h=189&c=7&o=5&dpr=2&pid=1.7");
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.model-body{
+    height: 100%;
+    
+    /* background-color: aquamarine */
+}
+#btn{
+    margin-right: 5px; 
+}
+.name{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: darkorchid
+}
+#modalTitle{
+    text-align: center
+}
+#helpBox{
+    margin-left: 70px
+}

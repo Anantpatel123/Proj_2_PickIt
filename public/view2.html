@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>PicIt View Destinations</title>
+  <!-- Bootstrap CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+</head>
+<body id="view-dest-body">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <div class="container">
+      <a class="navbar-brand logo" href="#">PIC It</a>  
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" href="./landing.html">Search for Destinations</a>
+          </li>
+        </ul>
+      </div> -->
+    </div>
+  </nav>
+  <div class="homepage-hero-module">
+    <div class="video-container">
+      <div class="text">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 class="text-center">PIC It</h2>
+        <p class="text-center">A Social-Based Travel Community</p>
+        <div class="wrapper">
+          <a href="./view2.html" class="destination-link">
+            <button class="btn btn-outline-light btn-lg text-center" type="button">Search Destination</button>
+          </a>
+          <a href="./view.html" class="destination-link">
+            <button class="btn btn-outline-light btn-lg text-center" type="button">View My Destinations</button>
+          </a>
+          <br>
+        </div>
+      </div>
+      <div class="filter"></div>
+      <video autoplay loop class="fillWidth">
+        <source src="./assets/videos/To-The-Left.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3 class="card-title" id="dest-search">
+              <strong>Destination Search</strong>
+            </h3>
+          </div>
+          <div class="card-body">
+            <!-- <input type="text" id="destination-search" class="form-control"> -->
+            <br>
+            <div class="text-right">
+              <input type="text" id="destination-search" class="form-control">
+              <br>
+              <button class="btn btn-primary btn-md" id="destination-search-btn">
+                <span class="fa fa-search"></span> Search</button>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3 class="card-title" id="dest-view">
+              <strong>Destination Search Results</strong>
+            </h3>
+          </div>
+          <div class="card-body">
+              <div id="statz"></div>            
+            <div class="well" id="stats" hidden="true">
+              <h2 id="title"></h2>
+              <div>
+                <h3>
+                  <strong>Activities:</strong>
+                  <span id="actiInput"></span>
+                </h3>
+                <h3>
+                  <strong>Resturants:</strong>
+                  <span id="restInput"></span>
+                </h3>
+                <strong> Attractions: </strong>
+                <span id="attrInput"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Custom Script -->
+  <!-- <script src="js/view.js" type="text/javascript"></script> -->
+  <script src="js/view2.js" type="text/javascript"></script>
+  
+</body>
+
+</html>

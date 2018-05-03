@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="2018 Chris Bacani, Wayne Wright, Anant Patel, Matthew Goggin, Mike Hollenberg" <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+    <title>PIC It</title>
+    <!-- INSERT BOOTSTRAP CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- LINK STYLESHEETS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+</head>
+<body>
+    <div class="fullscreen-bg">
+        <video loop muted autoplay class="fullscreen-bg__video">
+            <source src="./assets/videos/Cover.mp4" type="video/mp4">
+        </video>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="text-center">PIC It!</h1>
+    <div class="container">
+        <h3 class="text-center">Offer ends in 15 minutes!</h3>
+        <h2 class="text-center">Enter your email for a chance to win an all expenses paid, all-inclusive trip to Cabo San Lucas for four!</h2>
+        <h3 class="text-center">Instant drawing result!</h3>
+        <form id="form1">
+            <div class="input-group">
+                <input id="email" type="text" class="form-control" required placeholder="Enter Your Email Here">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" id="lotto">Let's Go!</button>
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="drawing-result">
+        <!-- INSERT CODE FOR RANDOM NUMBER LOTTERY GENERATOR -->
+    </div>
+</body>
+</html>
+<!-- LOTTERY TEST -->
+<script>
+    $("#form1").on("submit", function () {
+        event.preventDefault();
+        var email = $("#email").val().trim();
+        localStorage.setItem("email", email);
+
+        console.log("lotto btn clicked");
+        var userLottoNum = "";
+        var systemLottoNum = "6816224";
+        var random = Math.floor(Math.random() * 9000000) + 1;
+        userLottoNum = random + userLottoNum;
+        console.log(userLottoNum);
+        if (userLottoNum === systemLottoNum) {
+            $(".drawing-result").append("<h1 class='text-center'>Congratulations, you won! More information will be sent to you via email.</h1>");
+            console.log("Congratulations, you won!");
+        }
+        else {
+            $(".drawing-result").append("<h2 class='text-center'>Sorry, not this time! If not redirected in 3 seconds click <a href='./landing.html'>here</a></h2>");
+            console.log("Sorry, not this time!");
+        }
+        setTimeout(function () {
+            window.location.href = "./view.html"; //will redirect to your blog page (an ex: blog.html)
+        }, 3000); //will call the function after 5 secs.
+    });
+</script>
