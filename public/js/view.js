@@ -32,7 +32,7 @@ $(document).ready(function () {
         div.append("<p>Activities: " + data[i].activities + "</p>");
         div.append("<p>Restuarants: " + data[i].restaurants + "</p>");
         div.append("<p>Attractions: " + data[i].attractions + "</p>");
-        div.append("<p>-------------------------------------------------------------------------------------------</p>");
+        div.append("<hr>");
         // div.append("<button class='delete' data-id='" + data[i].id + "'>delete</button><br>");
         // btnDiv.append(button);
         // btnDiv.append(button2);
